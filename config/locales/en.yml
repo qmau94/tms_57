@@ -17,8 +17,17 @@ en:
     trainer: "Trainer"
     eduman: "Education Manager"
     title: "About"
+  edit:
+    title: "Update Profile"
+    pass_confirm: "Confirmation"
+    save: "Save changes"
+  error:
+    contain: "The form contain"
+    error: "error"
   flash:
     login_invalid: "Invalid email/password combination"
+    not_logged_in: "Please log in"
+    empty: "User is not exist"
   navbar:
     user: "Users"
     profile: "Profile"
