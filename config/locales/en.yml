@@ -5,6 +5,7 @@ en:
     intro: "framgia_tms57 is the best place for your training management system!"
     login: "LOG IN NOW!"
     about: "ABOUT"
+    login: "LOG IN"
   about:
     tuanca: "Chu Anh Tuan"
     vietmt: "Mai Tuan Viet"
@@ -16,3 +17,13 @@ en:
     trainer: "Trainer"
     eduman: "Education Manager"
     title: "About"
+  flash:
+    login_invalid: "Invalid email/password combination"
+  navbar:
+    user: "Users"
+    profile: "Profile"
+    setting: "Setting"
+    logout: "Log Out"
+    account: "Account"
+  session: 
+    remember: "Remember me on this computer"
