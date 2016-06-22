@@ -1,11 +1,8 @@
-<% provide :title, t("edit.title") %>
-<h1><%= t "edit.title" %></h1>
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @user do |f| %>
-    <%= render "shared/error_messages", oject: f.object %>
-
+    <%= form_for [:supervisor, @user] do |f| %>
+      <%= render "shared/error_messages", object: @user %>
+    
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
 
@@ -15,10 +12,13 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: "form-control" %>
 
-      <%= f.label :password_confirmation, t("edit.pass_confirm") %>
+      <%= f.label :password_confirmation, t("edit.pass_confirmation") %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
-      <%= f.submit t("edit.save"), class: "btn btn-primary" %>
-    <% end %>
+      <%= f.select :role, @role.collect{|key, value| [t(key), key]} %>
+      <span><%= t ("session.set_role") %></span>
+
+      <%= f.submit t("supervisor.create_account"), class: "btn btn-primary" %>
+    <% end %> 
   </div>
 </div>

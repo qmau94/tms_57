@@ -28,18 +28,25 @@ en:
     login_invalid: "Invalid email/password combination"
     not_logged_in: "Please log in"
     empty: "User is not exist"
-    login_invalid: "Invalid email/password combination"
-    not_logged_in: "Please log in"
+    not_supervisor: "You dont have permission to do this"
+    user_created: "User have been created"
+    user_notcreated: "Some thing go wrong"
   navbar:
     user: "USERS"
     profile: "PROFILE"
     setting: "SETTINGS"
     logout: "LOG OUT"
     account: "ACCOUNT"
+    new_user: "NEW USER"
   session: 
     remember: "Remember me on this computer"
+    set_role: "Set user as supervisor"
+  supervisor:
+    new_user: "New User"
+    create_account: "Create User Account"  
   relationship:
     following: "Following"
     followers: "Follower"
     follow: "Follow"
     unfollow: "Unfollow"
+
