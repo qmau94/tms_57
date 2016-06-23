@@ -50,4 +50,27 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "flash.not_logged_in"
+      redirect_to login_url
+    end
+  end
+  
+  def verify_supervisor
+    unless current_user.supervisor?
+      flash[:danger] = t "flash.not_supervisor"
+      redirect_to root_path
+    end 
+  end
+
+  def find_user
+    @user = User.find_by id: params[:id]
+    unless @user.present?
+      flash[:danger] = t "flash.empty"
+      redirect_to root_url
+    end
+  end
 end
