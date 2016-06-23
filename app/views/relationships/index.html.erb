@@ -1,0 +1,16 @@
+<% provide :title, @title %>
+<div class="col-xs-6 col-md-4 text-center">
+  <h2><%= @user.name %></h2>
+  <h3><%= @user.email %></h3>
+  <%= render "shared/stats" %>
+  <%= render "users/follow_form" if logged_in? %>
+</div>
+<div class="col-xs-12 col-md-8">
+  <h3><%= @title %></h3>
+  <% if @users.any? %>
+    <ul class="users follow">
+      <%= render @users %><br>
+    </ul>
+    <%= will_paginate @users %>
+  <% end %>
+</div>

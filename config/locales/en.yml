@@ -16,7 +16,7 @@ en:
     trainee: "Trainee"
     trainer: "Trainer"
     eduman: "Education Manager"
-    title: "About"
+    title: "ABOUT"
   edit:
     title: "Update Profile"
     pass_confirm: "Confirmation"
@@ -28,11 +28,18 @@ en:
     login_invalid: "Invalid email/password combination"
     not_logged_in: "Please log in"
     empty: "User is not exist"
+    login_invalid: "Invalid email/password combination"
+    not_logged_in: "Please log in"
   navbar:
-    user: "Users"
-    profile: "Profile"
-    setting: "Setting"
-    logout: "Log Out"
-    account: "Account"
+    user: "USERS"
+    profile: "PROFILE"
+    setting: "SETTINGS"
+    logout: "LOG OUT"
+    account: "ACCOUNT"
   session: 
     remember: "Remember me on this computer"
+  relationship:
+    following: "Following"
+    followers: "Follower"
+    follow: "Follow"
+    unfollow: "Unfollow"
