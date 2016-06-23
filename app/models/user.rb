@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   
   before_save {self.email = email.downcase}
 
+  enum role: {supervisor: 1, trainee: 0}
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

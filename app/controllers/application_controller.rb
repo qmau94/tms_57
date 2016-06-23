@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def verify_supervisor
+    unless current_user.supervisor?
+      flash[:danger] = t "flash.not_supervisor"
+      redirect_to root_path
+    end 
+  end
 end
