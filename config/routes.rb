@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :relationships, only: [:index]
+  end
+  resources :relationships, only: [:create, :destroy]
 end
