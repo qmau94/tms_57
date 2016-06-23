@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   namespace :supervisor do
     resources :users, only: [:create, :new]
+    resources :subjects, only: [:new, :create, :index]
   end
 end
