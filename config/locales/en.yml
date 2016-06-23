@@ -46,7 +46,14 @@ en:
     create_account: "Create User Account"  
   relationship:
     following: "Following"
-    followers: "Follower"
+    follower: "Follower"
     follow: "Follow"
     unfollow: "Unfollow"
-
+  subjects:
+    new: "New Subject"
+    create: "Create Subject"
+    created: "Subject has been created"
+    name: "Name"
+    description: "Description"
+    remove_task: "Remove Task"
+    add_task: "Add another task"
