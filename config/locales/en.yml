@@ -31,6 +31,7 @@ en:
     not_supervisor: "You dont have permission to do this"
     user_created: "User have been created"
     user_notcreated: "Some thing go wrong"
+    subject_empty: "Subject is not exist"
   navbar:
     user: "USERS"
     profile: "PROFILE"
@@ -57,3 +58,7 @@ en:
     description: "Description"
     remove_task: "Remove Task"
     add_task: "Add another task"
+    show: "Subject"
+    tasks: "Tasks"
+    subject_name: "Subject name"
+    index: "All Subjects"

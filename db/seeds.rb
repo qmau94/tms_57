@@ -24,3 +24,13 @@ following = users[2..40]
 followers = users[3..30]
 following.each {|followed| user.follow followed}
 followers.each {|follower| follower.follow user}
+
+10.times do |s|
+  name = Faker::App.name
+  description = Faker::Lorem.sentence
+  Subject.create! name: name, description: description,
+  tasks_attributes: [
+    {name:"Lesson 1", description: "lesson 1"},
+    {name:"Lesson 2", description: "lesson 2"},
+    {name:"Lesson 3", description: "lesson 3"},]
+end
