@@ -37,7 +37,7 @@ en:
     deleted_user: "User have been deleted"
     user_not_deleted: "Some thing go wrong"
     confirm: "You Sure?"
-
+    subject_deleted: "Subject has been deleted"
   navbar:
     user: "USERS"
     profile: "PROFILE"
@@ -58,8 +58,10 @@ en:
     follow: "Follow"
     unfollow: "Unfollow"
   subjects:
-    new: "New Subject"
-    create: "Create Subject"
+    new_title: "New Subject"
+    new: "Create Subject"
+    edit_title: "Edit Subject"
+    edit: "Edit"
     created: "Subject has been created"
     name: "Name"
     description: "Description"
@@ -76,3 +78,5 @@ en:
   index:
     all_trainee: "All Trainee"
     all_supervisor: "All Supervisor"
+    edit_success: "Subject has been updated"
+    delete: "Delete"

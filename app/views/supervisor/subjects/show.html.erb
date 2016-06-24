@@ -2,6 +2,10 @@
 <div class="col-xs-6 col-md-4 text-center">
   <h1><%= @subject.name %></h1>
   <h3><%= @subject.description %></h3>
+  <%= link_to t("subjects.edit"), edit_supervisor_subject_path(@subject),
+    class: "btn btn-success" %>
+  <%= link_to t("subjects.delete"), supervisor_subject_path, method: :delete,
+    class: "btn btn-danger" %>
 </div>
 <div class="col-xs-12 col-md-8">
 <h3><%= t "subjects.tasks" %> (<%= @subject.tasks.count %>)</h3>

@@ -11,11 +11,15 @@
           <%= t "subjects.description" %> : <%= subject.description %>
         </h5>
         <h4><%= t "subjects.tasks" %>(<%= subject.tasks.count %>)</h4>
-        <% if subject.tasks.any?%>
+        <% if subject.tasks.any? %>
           <ol>
             <%= render subject.tasks %>
           </ol>
         <% end %>
+        <%= link_to t("subjects.edit"), edit_supervisor_subject_path(subject),
+          class: "btn btn-success" %>
+        <%= link_to t("subjects.delete"), supervisor_subject_path(subject),
+          method: :delete, class: "btn btn-danger" %>
       </li>
     <% end %>
   <% end %>
