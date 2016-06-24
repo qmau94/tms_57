@@ -32,6 +32,12 @@ en:
     user_created: "User have been created"
     user_notcreated: "Some thing go wrong"
     subject_empty: "Subject is not exist"
+    supervisor_edit_user: "User have been updated"
+    user_notexist: "User not exist"
+    deleted_user: "User have been deleted"
+    user_not_deleted: "Some thing go wrong"
+    confirm: "You Sure?"
+
   navbar:
     user: "USERS"
     profile: "PROFILE"
@@ -44,7 +50,8 @@ en:
     set_role: "Set user as supervisor"
   supervisor:
     new_user: "New User"
-    create_account: "Create User Account"  
+    create_account: "Create User Account"
+    edit_user: "Edit User"  
   relationship:
     following: "Following"
     follower: "Follower"
@@ -62,3 +69,10 @@ en:
     tasks: "Tasks"
     subject_name: "Subject name"
     index: "All Subjects"
+  button: 
+    submit: "Submit"
+    delete: "Delete"
+    edit_user: "Edit"
+  index:
+    all_trainee: "All Trainee"
+    all_supervisor: "All Supervisor"

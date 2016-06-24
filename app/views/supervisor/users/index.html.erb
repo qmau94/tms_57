@@ -1,0 +1,16 @@
+<div class="col-md-6">
+  <h1><%= t "index.all_trainee" %></h1>
+  <% @trainees.each do |user| %>
+    <li>
+      <%= link_to user.name, supervisor_user_path(user) %>
+    </li>
+  <% end %>
+</div>
+<div class="col-md-6">
+  <h1><%= t "index.all_supervisor" %></h1>
+  <% @supervisors.each do |supervisor|%>
+    <li>
+      <%= link_to supervisor.name, supervisor_user_path(supervisor) %>
+    </li>
+  <% end %>
+</div>

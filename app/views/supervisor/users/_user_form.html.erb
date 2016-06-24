@@ -15,10 +15,10 @@
       <%= f.label :password_confirmation, t("edit.pass_confirmation") %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
-      <%= f.select :role, @role.collect{|key, value| [t(key), key]} %>
       <span><%= t ("session.set_role") %></span>
+      <%= f.select :role, @role.collect{|key, value| [t(key), key]} %>
 
-      <%= f.submit t("supervisor.create_account"), class: "btn btn-primary" %>
+      <%= f.submit t("button.submit"), class: "btn btn-primary" %>
     <% end %> 
   </div>
 </div>
