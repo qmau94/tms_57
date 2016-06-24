@@ -80,3 +80,7 @@ en:
     all_supervisor: "All Supervisor"
     edit_success: "Subject has been updated"
     delete: "Delete"
+  courses:
+    new: "New Course"
+    create: "Create Course"
+    created: "Course has been created"

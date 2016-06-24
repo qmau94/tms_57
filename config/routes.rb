@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   namespace :supervisor do
     resources :users
     resources :subjects
+    resources :courses, only: [:new, :create]
   end
 end

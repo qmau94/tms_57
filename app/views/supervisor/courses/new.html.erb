@@ -1,0 +1,23 @@
+<%= provide :title, t("courses.new") %>
+<h1><%= t "courses.new" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:supervisor, @course] do |f| %>
+      <%= render "shared/error_messages", object: @course %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <% @subjects.each do |subject| %>
+        <%= f.label :subject_ids, subject.name %>
+        <%= check_box_tag :subject_ids, subject.id, false,
+          name: "course[subject_ids][]" %>
+      <% end %>
+
+      <%= f.submit t("courses.create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
