@@ -1,7 +1,7 @@
 class Supervisor::SubjectsController < ApplicationController
   before_action :logged_in_user
   before_action :verify_supervisor
-  before_action :find_subject, only: [:show]
+  before_action :find_subject, except: [:index, :new, :create] 
   
   def new
     @subject = Subject.new
@@ -23,6 +23,27 @@ class Supervisor::SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.all
+  end
+  
+  def edit
+  end
+
+  def update
+    if @subject.update subject_params
+      flash[:success] = t "subjects.edit_success"
+      redirect_to supervisor_subject_path @subject
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @subject.destroy
+      flash[:success] = t "flash.subject_deleted"
+    else
+      flash[:danger] = t "flash.subject_empty"
+    end
+    redirect_to supervisor_subjects_path
   end
 
   private

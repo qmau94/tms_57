@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   namespace :supervisor do
     resources :users
-    resources :subjects, except: [:edit, :update, :destroy]
+    resources :subjects
   end
 end
