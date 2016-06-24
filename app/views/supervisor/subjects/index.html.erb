@@ -1,0 +1,22 @@
+<% provide :title, t("subjects.index") %>
+<h1><%= t "subjects.index" %></h1>
+<div class="col-md-6 col-md-offset-3">
+  <% if @subjects.any? %>
+    <% @subjects.each do |subject| %>
+      <li>
+        <h2>
+          <%= link_to subject.name, supervisor_subject_path(subject) %>
+        </h2>
+        <h5>
+          <%= t "subjects.description" %> : <%= subject.description %>
+        </h5>
+        <h4><%= t "subjects.tasks" %>(<%= subject.tasks.count %>)</h4>
+        <% if subject.tasks.any?%>
+          <ol>
+            <%= render subject.tasks %>
+          </ol>
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+</div>

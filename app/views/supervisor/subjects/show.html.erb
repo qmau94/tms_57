@@ -1,0 +1,19 @@
+<% provide :title, t("subjects.show") %>
+<div class="col-xs-6 col-md-4 text-center">
+  <h1><%= @subject.name %></h1>
+  <h3><%= @subject.description %></h3>
+</div>
+<div class="col-xs-12 col-md-8">
+<h3><%= t "subjects.tasks" %> (<%= @subject.tasks.count %>)</h3>
+  <% if @subject.tasks.any? %>
+    <ol>
+      <% @subject.tasks.all.each do |task| %>
+        <li>
+          <strong><%= task.name %></strong>
+          |
+          <%= task.description %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
