@@ -40,6 +40,9 @@ en:
     subject_deleted: "Subject has been deleted"
     course_updated: "Course has been updated"
     course_updated_fail: "Course update failed"
+    course_empty: "Course not exist"
+    removed_user: "User have been removed from course"
+    remove_user_failed: "User havent been moved from course"
   navbar:
     user: "USERS"
     profile: "PROFILE"
@@ -98,3 +101,6 @@ en:
     delete: "Delete"
   delete:
     sure: "Are you sure?"
+  assign_trainees: 
+    success: "Update Successful"
+    fail: "Something went wrong"

@@ -1,5 +1,17 @@
 <%= provide :title, @course.name %>
-<div>
+<div class="col-md-4">
+  <ol>
+    <% @user_courses.each do |user_course| %>
+      <li>
+        <%= link_to user_course.user.name %>
+        <%= link_to t("button.delete"), 
+          supervisor_user_course_path(@course, user_course), method: :delete,  
+          data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
+      </li>
+    <% end %>
+  </ol>
+</div>
+<div class="col-md-8">
   <h2><%= @course.name %></h2>
   <h4><%= t "courses.description" %> : <%= @course.description %></h4>
   <h4><%= t "courses.subject" %></h4>
