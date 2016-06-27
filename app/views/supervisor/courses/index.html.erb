@@ -1,0 +1,17 @@
+<%= provide :title, t("courses.index") %>
+<h1><%= t "courses.index" %></h1>
+<div class="col-md-6 col-md-offset-3">
+  <% if @courses.any? %>
+    <% @courses.each do |course| %>
+      <div>
+      <h2><%= link_to course.name, supervisor_course_path(course) %></h2>
+      <h4><%= t "courses.description" %> : <%= course.description %></h4>
+      <%= link_to t("button.edit"), edit_supervisor_course_path(course),
+        class: "btn btn-success" %>
+      <%= link_to t("button.delete"), supervisor_course_path(course),
+        method: :delete, data: {confirm: t("delete.sure")},
+        class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

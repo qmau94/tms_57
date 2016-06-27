@@ -34,3 +34,8 @@ followers.each {|follower| follower.follow user}
     {name:"Lesson 2", description: "lesson 2"},
     {name:"Lesson 3", description: "lesson 3"},]
 end
+
+Course.create! name: "Web Development", description: "How to make a web app",
+  subject_ids: ["1","2"]
+Course.create! name: "App Development", description: "Flappy",
+  subject_ids: ["4","7"]
