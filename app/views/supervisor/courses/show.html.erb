@@ -1,0 +1,20 @@
+<%= provide :title, @course.name %>
+<div>
+  <h2><%= @course.name %></h2>
+  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
+  <h4><%= t "courses.subject" %></h4>
+    <% if @course.subjects.any? %>
+      <ol>
+        <% @course.subjects.each do |subject| %>
+          <li>
+            <%= link_to subject.name, supervisor_subject_path(subject) %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  <%= link_to t("button.edit"), edit_supervisor_course_path,
+    class: "btn btn-success" %>
+  <%= link_to t("button.delete"), supervisor_course_path,
+    method: :delete, data: {confirm: t("delete.sure")}, 
+    class: "btn btn-danger" %>
+</div>

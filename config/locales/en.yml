@@ -74,7 +74,7 @@ en:
   button: 
     submit: "Submit"
     delete: "Delete"
-    edit_user: "Edit"
+    edit: "Edit"
   index:
     all_trainee: "All Trainee"
     all_supervisor: "All Supervisor"
@@ -84,3 +84,12 @@ en:
     new: "New Course"
     create: "Create Course"
     created: "Course has been created"
+    empty: "This course does not exist"
+    deleted: "Course has been deleted"
+    edit_title: "Edit Course"
+    update: "Course has been updated"
+    index: "Courses"
+    edit: "Edit"
+    delete: "Delete"
+  delete:
+    sure: "Are you sure?"
