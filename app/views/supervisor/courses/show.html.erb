@@ -7,7 +7,8 @@
       <ol>
         <% @course.subjects.each do |subject| %>
           <li>
-            <%= link_to subject.name, supervisor_subject_path(subject) %>
+            <%= link_to subject.name, 
+              supervisor_course_course_subject_path(@course.id, subject) %>
           </li>
         <% end %>
       </ol>
