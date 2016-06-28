@@ -1,0 +1,17 @@
+<%= form_for [:supervisor, @course], 
+  url: supervisor_assign_trainee_path do |f| %>
+  <div class="col-md-6 col-md-offset-3">
+    <% @users.each do |user| %>
+      <div class="row">
+        <div class="col-md-1">
+          <%= f.label :user_ids, user.name %>
+        </div>
+        <div class="col-md-1 col-md-offset-9">
+          <%= check_box_tag "course[user_ids][]", user.id, 
+            @course.users.include?(user) %>
+        </div>
+      </div>
+    <% end %>
+    <%= f.submit t("button.submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

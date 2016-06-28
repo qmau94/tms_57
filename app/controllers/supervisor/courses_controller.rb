@@ -22,6 +22,7 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def show
+    @user_courses = @course.user_courses
   end
 
   def edit

@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
   
   before_save {self.email = email.downcase}
 
+  scope :avaiable_user, ->course_id{where "id NOT IN (SELECT user_id FROM 
+    user_courses WHERE course_id IN (SELECT id FROM courses where status = 1 
+    OR status = 0 ))", course_id}
+
   enum role: {supervisor: 1, trainee: 0}
 
   class << self
