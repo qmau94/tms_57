@@ -3,16 +3,18 @@ class Supervisor::AssignTraineesController < ApplicationController
   before_action :find_course, only: [:edit, :update]
 
   def edit
-    @users = User.trainee.avaiable_user @course.id
+    @trainees = User.trainee.avaiable_user @course.id
+    @supervisors = User.supervisor
   end
 
   def update
     if @course.update_attributes user_course_params
       flash[:success] = t "assign_trainees.success"
+      redirect_to supervisor_course_path @course
     else
       flash.now[:danger] = t "assign_trainees.fail"
+      redirect_to root_path
     end
-    redirect_to root_path
   end
 
   private
