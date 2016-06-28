@@ -38,6 +38,8 @@ en:
     user_not_deleted: "Some thing go wrong"
     confirm: "You Sure?"
     subject_deleted: "Subject has been deleted"
+    course_updated: "Course has been updated"
+    course_updated_fail: "Course update failed"
   navbar:
     user: "USERS"
     profile: "PROFILE"
@@ -75,6 +77,9 @@ en:
     submit: "Submit"
     delete: "Delete"
     edit: "Edit"
+    start: "Start"
+    finish: "Finish"
+    finished: "Finished"
   index:
     all_trainee: "All Trainee"
     all_supervisor: "All Supervisor"

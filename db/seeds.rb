@@ -39,3 +39,7 @@ Course.create! name: "Web Development", description: "How to make a web app",
   subject_ids: ["1","2"]
 Course.create! name: "App Development", description: "Flappy",
   subject_ids: ["4","7"]
+
+UserCourse.create! user_id: 2, course_id: 1
+UserCourse.create! user_id: 3, course_id: 1
+UserCourse.create! user_id: 4, course_id: 1

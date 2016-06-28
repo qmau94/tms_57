@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :subjects
     resources :courses do
       resources :course_subjects, only: [:show]
+      resource :active_courses, only: [:update]
     end
   end
 end
