@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:index]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :courses, only: [:index, :show]
   namespace :supervisor do
     resources :users
     resources :subjects
