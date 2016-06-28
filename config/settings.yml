@@ -1,1 +1,3 @@
 default_number_of_tasks: 4
+start: "start"
+finish: "finish"
