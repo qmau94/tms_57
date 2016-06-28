@@ -1,0 +1,17 @@
+<%= provide :title, @course.name %>
+<div class="col-md-4">
+  <h1><%= @course.name %></h1>
+  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
+</div>
+<div class="col-md-8">
+  <% if @user_subjects.any? %>
+    <h2><%= t "subjects.show" %></h2>
+    <ol>
+      <% @user_subjects.each do |user_subject| %>
+        <li>
+          <h3><%= user_subject.subject.name %></h2>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>

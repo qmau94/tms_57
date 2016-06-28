@@ -30,7 +30,7 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def update
-    if @course.save
+    if @course.update course_params
       flash[:success] = t "courses.update"
       redirect_to supervisor_courses_path
     else
