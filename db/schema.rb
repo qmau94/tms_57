@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 20160620084037) do
   create_table "course_subjects", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "subject_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "course_subjects", ["course_id"], name: "index_course_subjects_on_course_id"
@@ -83,9 +84,10 @@ ActiveRecord::Schema.define(version: 20160620084037) do
     t.integer  "user_id"
     t.integer  "subject_id"
     t.integer  "user_course_id"
-    t.string   "status"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "course_id"
+    t.integer  "status",         default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "user_subjects", ["subject_id"], name: "index_user_subjects_on_subject_id"

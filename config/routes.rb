@@ -13,11 +13,12 @@ Rails.application.routes.draw do
     resources :users
     resources :subjects
     resources :courses do
-      resources :course_subjects, only: [:show]
+      resources :course_subjects, only: [:show] do
+        resource :active_subjects, only: [:update]
+      end
       resource :active_courses, only: [:update]
     end
     resources :user_courses, only: :destroy
     resources :assign_trainees, only: [:edit, :update]
-
   end
 end
