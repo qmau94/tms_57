@@ -15,13 +15,16 @@ h1 {
 .img-center {
   margin: 0 auto;
 }
-.jumbotron a{
-  color: #fff;
-  text-decoration: bold;
-}
-a:hover{
-  color: #666;
-  text-decoration: none;
+.jumbotron {
+  background: #000 url("training.jpg") center center;
+  a{
+    color: #fff;
+    text-decoration: bold;
+  }
+  a:hover{
+    color: #666;
+    text-decoration: none;
+  }
 }
 .row {
   padding-top: 70px;

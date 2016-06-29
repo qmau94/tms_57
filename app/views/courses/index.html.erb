@@ -2,12 +2,27 @@
 <h1><%= t "courses.index" %></h1>
 <div class="col-md-6 col-md-offset-3">
   <% if @user_courses.any? %>
-    <ol>
-      <% @user_courses.each do |user_course| %>
-        <li>
-          <h2><%= link_to user_course.course.name, course_path(user_course.id) %></h2>
-        </li>
-      <% end %>
-    </ol>
+    <div class="row">
+      <ul>
+        <h2><%= t "courses.active" %>:</h2>
+        <% @user_courses.each do |user_course| %>
+          <% if user_course.course.start? %>
+            <li>
+              <h3><%= link_to user_course.course.name,
+                course_path(user_course.id) %></h3>
+            </li>
+          <% end %>
+        <% end %>
+        <h2><%= t "courses.course_finished" %></h2> 
+        <% @user_courses.each do |user_course| %>
+          <% unless user_course.course.start? %>
+            <li>
+              <h3><%= link_to user_course.course.name,
+                course_path(user_course.id) %></h3>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 </div>
