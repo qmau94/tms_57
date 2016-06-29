@@ -4,7 +4,8 @@ class CreateUserSubjects < ActiveRecord::Migration
       t.integer :user_id
       t.integer :subject_id
       t.integer :user_course_id
-      t.string :status
+      t.integer :course_id
+      t.integer :status, default: 0
       t.timestamps null: false
     end
     add_index "user_subjects", ["subject_id"], name: "index_user_subjects_on_subject_id"

@@ -1,6 +1,5 @@
 class Supervisor::CourseSubjectsController < ApplicationController
-  before_action :logged_in_user, only: [:show]
-  before_action :verify_supervisor, only: [:show]
+  before_action :logged_in_user, :verify_supervisor, only: [:show]
 
   def show
     @course_subject = CourseSubject.find params[:id]

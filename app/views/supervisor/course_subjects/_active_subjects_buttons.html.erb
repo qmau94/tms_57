@@ -1,0 +1,16 @@
+<% if @course_subject.init? %>
+  <%= link_to t("button.start"),
+    supervisor_course_course_subject_active_subjects_path(
+    course_id: @course_subject.course_id,
+    course_subject_id: @course_subject.id, status: Settings.start),
+    method: :patch, class: "btn btn-primary" %>
+<% elsif @course_subject.start? %>
+  <%= link_to t("button.finish"),
+    supervisor_course_course_subject_active_subjects_path(
+    course_id: @course_subject.course_id,
+    course_subject_id: @course_subject.id, status: Settings.finish),
+    method: :patch, class: "btn btn-success" %>
+<% else %>
+  <%= link_to t("button.finished"),supervisor_course_course_subject_path,
+    class: "btn btn-danger" %>
+<% end %>

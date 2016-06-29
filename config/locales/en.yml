@@ -43,6 +43,9 @@ en:
     course_empty: "Course not exist"
     removed_user: "User have been removed from course"
     remove_user_failed: "User havent been moved from course"
+    course_not_actived: "Course is not activated"
+    subject_started: "Subject has been started"
+    subject_failed: "Subject update failed"
   navbar:
     user: "USERS"
     profile: "PROFILE"
