@@ -2,7 +2,7 @@ class Supervisor::UserCoursesController < ApplicationController
   before_action :verify_supervisor
 
   def destroy
-    user_course = UserCourse.find_by course_id: params[:id]
+    user_course = UserCourse.find_by id: params[:id]
     course_id = user_course.course_id
     if user_course.destroy
       flash[:success] =  t "flash.removed_user"    

@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-1">
+    <%= f.label :user_ids, user.name %>
+  </div>
+  <div class="col-md-1 col-md-offset-9">
+    <%= check_box_tag "course[user_ids][]", user.id, 
+      @course.users.include?(user) %>
+  </div>
+</div>
