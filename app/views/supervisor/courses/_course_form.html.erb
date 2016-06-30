@@ -9,10 +9,12 @@
       <%= f.label :description %>
       <%= f.text_field :description, class: "form-control" %>
 
-      <% @subjects.each do |subject| %>
-        <%= f.label :subject_ids, subject.name %>
-        <%= check_box_tag :subject_ids, subject.id,
-          @course.subjects.include?(subject), name: "course[subject_ids][]" %>
+      <%= f.label t "subjects.show" %>
+      <%= f.collection_check_boxes :subject_ids, @subjects, :id, :name do |s| %>
+        <div class="checkbox">
+          <%= s.check_box %>
+          <%= s.label %>
+        </div>
       <% end %>
 
       <%= f.submit t("courses.#{params[:action]}"), class: "btn btn-primary" %>

@@ -80,6 +80,9 @@ en:
     subject_name: "Subject name"
     index: "All Subjects"
     edit_success: "Subject has been updated"
+    empty: "Subject does not exist"
+  tasks:
+    update: "Update"
   button: 
     submit: "Submit"
     delete: "Delete"
@@ -108,6 +111,9 @@ en:
   delete:
     sure: "Are you sure?"
   assign_trainees: 
+    success: "Update Successful"
+    fail: "Something went wrong"
+  update:
     success: "Update Successful"
     fail: "Something went wrong"
   title:

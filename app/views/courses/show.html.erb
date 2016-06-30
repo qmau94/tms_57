@@ -9,7 +9,8 @@
     <ol>
       <% @user_subjects.each do |user_subject| %>
         <li>
-          <h3><%= user_subject.subject.name %></h2>
+          <h3><%= link_to user_subject.subject.name,
+            course_user_subject_path(@course.id, user_subject) %></h3>
         </li>
       <% end %>
     </ol>
