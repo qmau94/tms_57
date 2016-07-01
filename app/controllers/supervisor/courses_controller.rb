@@ -15,7 +15,7 @@ class Supervisor::CoursesController < ApplicationController
     @course = Course.new course_params
     if @course.save
       flash[:success] = t "courses.created"
-      redirect_to root_url
+      redirect_to supervisor_courses_path
     else
       render :new
     end
@@ -35,7 +35,7 @@ class Supervisor::CoursesController < ApplicationController
   def update
     if @course.update course_params
       flash[:success] = t "courses.update"
-      redirect_to supervisor_courses_path
+      redirect_to supervisor_course_path @course
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class Supervisor::CoursesController < ApplicationController
     else
       flash[:danger] = t "courses.empty"
     end
-    redirect_to root_url
+    redirect_to supervisor_courses_path
   end
 
   private

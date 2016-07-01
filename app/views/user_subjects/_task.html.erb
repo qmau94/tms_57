@@ -1,0 +1,22 @@
+<div class="row">
+  <% @tasks.each do |task| %>
+    <h3><%= task.name %></h3>
+    <% if @user_tasks.exists? task_id: task.id %>
+      <%= t "button.finished" %>
+    <% else %>
+      <%= form_for @user_subject, url: course_user_subject_path(@user_course, 
+        @user_subject) do |f|%>
+        <%= f.hidden_field :id, value: @user_subject.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :user_course_id, value: @user_course.id %>
+        <%= f.hidden_field :subject_id, value: @subject.id %>
+        <%= f.fields_for :user_tasks, @user_task do |builder| %>
+          <%= builder.hidden_field :user_subject_id, value: @user_subject.id %>
+          <%= builder.hidden_field :task_id, value: task.id %>
+          <%= builder.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+        <%= f.submit t("button.finish"), class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
