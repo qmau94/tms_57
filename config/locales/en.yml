@@ -44,7 +44,7 @@ en:
     removed_user: "User have been removed from course"
     remove_user_failed: "User havent been moved from course"
     course_not_actived: "Course is not activated"
-    subject_started: "Subject has been started"
+    subject_updated: "Subject has been updated"
     subject_failed: "Subject update failed"
   navbar:
     user: "USERS"
@@ -62,7 +62,7 @@ en:
     edit_user: "Edit User"  
   relationship:
     following: "Following"
-    follower: "Follower"
+    followers: "Follower"
     follow: "Follow"
     unfollow: "Unfollow"
   subjects:
@@ -79,6 +79,7 @@ en:
     tasks: "Tasks"
     subject_name: "Subject name"
     index: "All Subjects"
+    edit_success: "Subject has been updated"
   button: 
     submit: "Submit"
     delete: "Delete"
@@ -103,6 +104,7 @@ en:
     index: "Courses"
     edit: "Edit"
     delete: "Delete"
+    course: "course"
   delete:
     sure: "Are you sure?"
   assign_trainees: 
@@ -111,3 +113,12 @@ en:
   title:
     supervisor: "Supervisor"
     trainee: "Trainee"
+  activity:
+    course: "course"
+    create: "created"
+    update: "updated"
+    start: "started"
+    finish: "finished"
+    remove_trainee: "removed from"
+    add_trainee: "added to"
+    ago: "ago"

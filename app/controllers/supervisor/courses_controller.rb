@@ -25,6 +25,7 @@ class Supervisor::CoursesController < ApplicationController
     @user_courses = @course.user_courses
     @supervisors = @user_courses.select{|user_course| user_course.user.supervisor?}
     @trainees = @user_courses.select{|user_course| user_course.user.trainee?}
+    @activities = (Activity.find_with @course).desc
   end
 
   def edit

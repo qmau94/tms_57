@@ -1,4 +1,6 @@
 class UserSubject < ActiveRecord::Base
+  include Trackable
+  
   belongs_to :user
   belongs_to :subject
   belongs_to :user_course

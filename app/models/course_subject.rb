@@ -1,4 +1,5 @@
 class CourseSubject < ActiveRecord::Base
+  include Trackable
   after_update :update_subjects_status
 
   belongs_to :course
