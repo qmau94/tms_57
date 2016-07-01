@@ -5,7 +5,7 @@ class Supervisor::ActiveSubjectsController < ApplicationController
   def update
     @subject = CourseSubject.find_by id: params[:course_subject_id]
     if @subject.update_attributes status: active_params
-      flash[:success] = t "flash.subject_started"
+      flash[:success] = t "flash.subject_updated"
     else
       flash[:danger] = t "flash.subject_failed"
     end
