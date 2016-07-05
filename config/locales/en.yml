@@ -45,6 +45,7 @@ en:
     remove_user_failed: "User havent been moved from course"
     course_not_actived: "Course is not activated"
     subject_updated: "Subject has been updated"
+    subject_started: "Subject has been started"
     subject_failed: "Subject update failed"
   navbar:
     user: "USERS"
@@ -112,6 +113,16 @@ en:
     delete: "Delete"
     course: "course"
     is_not_started: "This course is not started yet"
+    start: "start"
+    active: "Your Active Course"
+    course_finished: "Finished Course"
+  user:
+    profile: "Profile"
+    dashboard: "Dashboard"
+  dashboard:
+    courses: "All Courses"
+    subjects: "All Subjects"
+    users: "All Users"
   delete:
     sure: "Are you sure?"
   assign_trainees: 

@@ -1,0 +1,13 @@
+<div class="col-md-6 col-md-offset-3 text-center">
+  <ol>
+    <h2><%= t "user.dashboard" %></h2>
+    <%= link_to t("dashboard.courses"), supervisor_courses_path,
+      class: "btn btn-primary" %>
+    <%= link_to t("dashboard.subjects"), supervisor_subjects_path,
+      class: "btn btn-primary" %>
+    <%= link_to t("dashboard.users"), supervisor_users_path,
+      class: "btn btn-primary" %>
+    <%= link_to t("user.profile"), user_path(current_user),
+      class: "btn btn-primary" %>
+  </ol>
+</div>
