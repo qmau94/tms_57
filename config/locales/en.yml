@@ -134,3 +134,5 @@ en:
     ago: "ago"
     follow: "followed"
     unfollow: "unfollowed"
+  course_show:
+    line: "------"

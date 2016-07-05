@@ -20,6 +20,10 @@ class UserSubject < ActiveRecord::Base
     attribute[:user_subject_id].blank?
   end
 
+  def ratio
+    100 * self.user_tasks.count / self.subject.tasks.count
+  end
+  
   private
   def start_activity
     type = Settings.started

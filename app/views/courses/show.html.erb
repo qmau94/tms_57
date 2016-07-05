@@ -1,19 +1,46 @@
 <%= provide :title, @course.name %>
-<div class="col-md-4">
-  <h1><%= @course.name %></h1>
-  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
-</div>
-<div class="col-md-8">
-  <% if @user_subjects.any? %>
-    <h2><%= t "subjects.show" %></h2>
-    <ol>
-      <% @user_subjects.each do |user_subject| %>
-        <li>
-          <h3><%= link_to user_subject.subject.name,
-            course_user_subject_path(@course.id, user_subject) %></h3>
+<div class="col-md-3" id="user_course">
+  <h2><%= t "title.trainee" %></h2>
+  <ol>
+    <% @user_courses.each do |user_course| %>
+      <% if user_course.user.trainee? %>
+        <li class="user_name">
+          <div class="col-md-8">
+            <%= link_to user_course.user.name, user_path(user_course.user) %>
+          </div>
         </li>
       <% end %>
-    </ol>
+    <% end %>
+  </ol>
+</div>
+<div class="col-md-9" id="subject_wrapper">
+  <h1><%= @course.name %></h1>
+  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
+  <% if @user_subjects.any? %>
+    <h3><%= t "subjects.show" %></h3>
+    <%= t "course_show.line" %>
+    <% @user_subjects.each do |user_subject| %>
+      <div class="subject">
+        <div class="subject_name">
+          <% if user_subject.finish? %>
+            <%= link_to user_subject.subject.name,
+              course_user_subject_path(@course.id, user_subject), 
+              class: "btn btn-danger"%>
+          <% else %>
+            <%= link_to user_subject.subject.name,
+              course_user_subject_path(@course.id, user_subject), 
+              class: "btn btn-primary"%>
+          <% end %>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width:<%=user_subject.ratio%>%">
+          <span><%= user_subject.ratio %> %</span>
+          </div>
+        </div>
+      </div>
+      <%= t "course_show.line" %> 
+    <% end %>
   <% else %>
     <h2> <%= t "courses.is_not_started" %> </h2>
   <% end %>

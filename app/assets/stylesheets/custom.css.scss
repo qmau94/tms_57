@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$gray-medium-light: #eaeaea;
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -163,4 +164,37 @@ input {
 }
 nav {
   text-transform: uppercase;
+}
+#user_course {
+  border-right: 1px solid $gray-medium-light;
+  border-bottom: 1px solid $gray-medium-light;
+}
+.subject {
+  height: 100px;
+  width: 150px;
+  display: inline-block;
+  background: #006666;
+  margin-bottom: 20px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  border-left: 1px solid $gray-medium-light;
+}
+.subject_name {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.progress {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#subject_wrapper {
+  border-left: 2px solid $gray-medium-light;
+}
+h2 {
+  color: green;
+}
+.user_name {
+  font-size: 20px;
 }
