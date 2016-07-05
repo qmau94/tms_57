@@ -11,11 +11,11 @@ class UserCourse < ActiveRecord::Base
   
   private
   def add_activity
-    type = I18n.t("activity.add_trainee")
+    type = Settings.add_trainee
     self.course.track_activity type, self.user 
   end
   def remove_activity
-    type = I18n.t("activity.remove_trainee")
-    self.course.track_activity type, self.user 
+    type = Settings.remove_trainee
+    self.course.track_activity type, self.user
   end
 end

@@ -1,0 +1,4 @@
+<%= activity.action %> 
+<%= t "activity.#{activity.trackable_type.underscore}" %>
+<%= link_to activity.trackable.subject.name, [:supervisor, @course, activity.trackable] %><br>
+<%= time_ago_in_words activity.created_at %> <%= t "activity.ago" %><br>

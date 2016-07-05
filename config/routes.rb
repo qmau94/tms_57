@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :courses, only: [:index, :show] do
-    resources :user_subjects, only: [:show, :update]
+    resources :user_subjects, only: [:show, :update] do
+      resource :finish_subject, only: [:update]
+    end
   end
   namespace :supervisor do
     resources :users

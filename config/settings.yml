@@ -1,3 +1,7 @@
 default_number_of_tasks: 4
 start: "start"
 finish: "finish"
+started: "started"
+finished: "finished"
+remove_trainee: "removed from"
+add_trainee: "added to"
