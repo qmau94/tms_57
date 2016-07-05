@@ -6,7 +6,11 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @user_course = current_user.user_courses.find_by id: params[:id]
+    @user_course = UserCourse.includes(course: :user_courses)
+      .find_by id: params[:id]
+    @course = @user_course.course
+    @user_courses = UserCourse.includes(course: :user_courses)
+      .where course_id: @course
     if @user_course.nil?
       flash[:danger] = t "courses.empty"
       redirect_to root_url
