@@ -1,13 +1,14 @@
 class Course < ActiveRecord::Base
   include Trackable
-  after_update :create_user_subject, unless: :check_start
+  after_update :create_user_subject, unless: :init_to_start?
   after_update :active_activity, if: :status_change?
 
   has_many :user_courses, dependent: :destroy
   has_many :users, through: :user_courses
   has_many :course_subjects, dependent: :destroy
   has_many :subjects, through: :course_subjects
-
+  has_many :user_subjects
+  
   validates :name, presence: true
   validates :description, presence: true
 
@@ -26,18 +27,4 @@ class Course < ActiveRecord::Base
       end
     end
   end
-
-  def active_activity
-    type = self.start? ? I18n.t("activity.start") : I18n.t("activity.finish")
-    self.track_activity type, nil 
-  end
-
-  def status_change?
-    self.status_changed? 
-  end
-
-  def check_start
-    !self.start?
-  end
-
 end

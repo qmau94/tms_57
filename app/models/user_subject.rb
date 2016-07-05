@@ -1,9 +1,13 @@
 class UserSubject < ActiveRecord::Base
   include Trackable
   
+  after_update :start_activity, if: :init_to_start?
+  after_update :finish_activity, if: :start_to_finish?
+
   belongs_to :user
   belongs_to :subject
   belongs_to :user_course
+  belongs_to :course
   
   has_many :user_tasks, dependent: :destroy
 
@@ -14,5 +18,16 @@ class UserSubject < ActiveRecord::Base
 
   def reject_user_subject attribute
     attribute[:user_subject_id].blank?
+  end
+
+  private
+  def start_activity
+    type = Settings.started
+    self.track_activity type, self.user
+  end
+
+  def finish_activity
+    type = Settings.finished
+    self.track_activity type, self.user
   end
 end

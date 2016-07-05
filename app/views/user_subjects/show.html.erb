@@ -1,6 +1,26 @@
 <div class="col-md-4">
-  <h1><%= @subject.name %></h1>
+  <h1><%= @user_subject.subject.name %></h1>
+  <% if @user_subject.init? %>
+    <%= link_to t("button.is_not_started"), course_user_subject_path,
+      class: "btn btn-primary" %>
+  <% elsif @user_subject.start? %>
+    <%= link_to t("button.finish"),
+      course_user_subject_finish_subject_path(user_subject_id: @user_subject.id,
+      status: Settings.finish), method: :patch, class: "btn btn-success"%>
+  <% else %>
+    <%= link_to t("button.finished"), course_user_subject_path,
+      class: "btn btn-danger" %>
+  <% end %>
 </div>
 <div class="col-md-8">
-  <%= render "task" %>
+  <% if @user_subject.start? %> 
+  <h2><%= t "subjects.tasks"%> (<%= @user_subject.subject.tasks.count %>)</h2>
+    <%= render "task" %>
+  <% else %>
+    <h2><%= t "tasks.is_not_available" %></h2>
+  <% end %>
+  <div class="activities">
+    <h2><%= t "course.activities" %></h2>
+    <%= render "activities/activity", activities: @activities %>
+  </div>
 </div>
