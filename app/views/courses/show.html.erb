@@ -24,11 +24,11 @@
         <div class="subject_name">
           <% if user_subject.finish? %>
             <%= link_to user_subject.subject.name,
-              course_user_subject_path(@course.id, user_subject), 
+              course_user_subject_path(@course.id, user_subject),
               class: "btn btn-danger"%>
           <% else %>
             <%= link_to user_subject.subject.name,
-              course_user_subject_path(@course.id, user_subject), 
+              course_user_subject_path(@course.id, user_subject),
               class: "btn btn-primary"%>
           <% end %>
         </div>

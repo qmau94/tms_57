@@ -1,0 +1,46 @@
+<div class="col-xs-6 col-md-4 text-center">
+  <h2><%= @user.name %></h2>
+  <h3><%= @user.email %></h3>
+  <%= render "shared/stats" %>
+  <%= render "users/follow_form" %>
+  <% if current_user.supervisor? && !current_user?(@user) %>
+    <%= link_to t("button.delete"), [:supervisor, @user], method: :delete,
+      data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
+    <%= link_to t("button.edit_user"), edit_supervisor_user_path, 
+      class: "btn btn-primary" %>
+  <% end %>
+</div>
+<div class="col-xs-12 col-md-8">
+  <div class="course">
+    <% @user_courses.each do |user_course| %>
+      <% if user_course.course.start? %>
+        <h1><%= user_course.course.name %></h1>
+        <h4><%= t "courses.description" %>:
+          <%= user_course.course.description %></h4>
+        <% user_course.user_subjects.each do |user_subject| %>
+          <div class="subject">
+            <div class="subject_name">
+              <% if user_subject.finish? %>
+                <%= link_to user_subject.subject.name,
+                  course_user_subject_path(user_course.course.id, user_subject),
+                  class: "btn btn-danger"%>
+              <% else %>
+                <%= link_to user_subject.subject.name,
+                  course_user_subject_path(user_course.course.id, user_subject),
+                  class: "btn btn-primary"%>
+              <% end %>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" 
+                aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100" 
+                style="width:<%=user_subject.ratio%>%">
+              <span><%= user_subject.ratio %> %</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
