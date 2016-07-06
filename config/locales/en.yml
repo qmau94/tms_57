@@ -113,6 +113,7 @@ en:
     delete: "Delete"
     course: "course"
     is_not_started: "This course is not started yet"
+    cannot_edit: "This course has been started and not available to be edited"
     start: "start"
     active: "Your Active Course"
     course_finished: "Finished Course"
@@ -145,5 +146,8 @@ en:
     ago: "ago"
     follow: "followed"
     unfollow: "unfollowed"
+    in_subject: "in subject"
+    in_course: "in course"
+    Course: "Course"
   course_show:
     line: "------"
