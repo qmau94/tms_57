@@ -1,15 +1,2 @@
 <% provide :title, @user.name %>
-<div class="col-xs-6 col-md-4 text-center">
-  <h2><%= @user.name %></h2>
-  <h3><%= @user.email %></h3>
-  <%= render "shared/stats" %>
-  <%= render "users/follow_form" if logged_in? %>
-  <% if current_user.supervisor? && !current_user?(@user) %>
-    <%= link_to t("button.delete"), [:supervisor, @user], method: :delete,
-      data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
-  <% end %>
-  <%= link_to t("button.edit_user"), edit_supervisor_user_path, 
-    class: "btn btn-primary" %>
-</div>
-<div class="col-xs-12 col-md-8">
-</div>
+<%= render "shared/user_show" %>
