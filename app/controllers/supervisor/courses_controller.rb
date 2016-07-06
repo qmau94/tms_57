@@ -1,6 +1,7 @@
 class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user, :verify_supervisor
   before_action :find_course, except: [:index, :new, :create] 
+  before_action :verify_editable_course, only: [:edit, :update]
 
   def index
     @courses = Course.all
@@ -25,7 +26,7 @@ class Supervisor::CoursesController < ApplicationController
     @user_courses = @course.user_courses
     @supervisors = @user_courses.select{|user_course| user_course.user.supervisor?}
     @trainees = @user_courses.select{|user_course| user_course.user.trainee?}
-    @activities = (Activity.find_with @course).desc
+    @activities = @course.all_activities
   end
 
   def edit

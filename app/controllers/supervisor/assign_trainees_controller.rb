@@ -1,6 +1,6 @@
 class Supervisor::AssignTraineesController < ApplicationController
-  before_action :verify_supervisor, only: [:edit, :update]
-  before_action :find_course, only: [:edit, :update]
+  before_action :verify_supervisor, :verify_editable_course, :find_course,
+    only: [:edit, :update]
 
   def edit
     @trainees = User.trainee.avaiable_user @course.id

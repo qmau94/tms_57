@@ -45,6 +45,7 @@ class Supervisor::UsersController < ApplicationController
   
   def show
     @user_courses = @user.user_courses
+    @activities = @user.activities.desc
   end
 
   def new

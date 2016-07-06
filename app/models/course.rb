@@ -16,6 +16,14 @@ class Course < ActiveRecord::Base
 
   enum status: {init: 0, start: 1, finish: 2}
   
+  def all_activities
+    activities = Array.new
+    acts = Activity.all
+    activities += acts.find_with self  
+    activities += acts.find_with_many self.course_subjects
+    activities.sort {|a,b| b.created_at <=> a.created_at}
+  end
+
   private
   def create_user_subject
     self.user_courses.each do |user_course|
