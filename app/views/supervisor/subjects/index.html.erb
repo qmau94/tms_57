@@ -1,26 +1,34 @@
-<% provide :title, t("subjects.index") %>
+<%= provide :title, t("subjects.index") %>
 <h1><%= t "subjects.index" %></h1>
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
   <% if @subjects.any? %>
-    <% @subjects.each do |subject| %>
-      <li>
-        <h2>
-          <%= link_to subject.name, supervisor_subject_path(subject) %>
-        </h2>
-        <h5>
-          <%= t "subjects.description" %> : <%= subject.description %>
-        </h5>
-        <h4><%= t "subjects.tasks" %>(<%= subject.tasks.count %>)</h4>
-        <% if subject.tasks.any? %>
-          <ol>
-            <%= render subject.tasks %>
-          </ol>
-        <% end %>
-        <%= link_to t("subjects.edit"), edit_supervisor_subject_path(subject),
-          class: "btn btn-success" %>
-        <%= link_to t("subjects.delete"), supervisor_subject_path(subject),
-          method: :delete, class: "btn btn-danger" %>
-      </li>
-    <% end %>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th><%= t "subjects.name" %></th>
+            <th><%= t "subjects.description" %></th>
+            <th><%= t "subjects.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @subjects.each do |subject| %>
+            <tr>
+              <td>
+              <%= link_to subject.name, supervisor_subject_path(subject) %>
+              </td>
+              <td><%= subject.description %></td>
+              <td><%= link_to t("button.edit"),
+              edit_supervisor_subject_path(subject),
+              class: "btn btn-success"%>
+                <%= link_to t("button.delete"),
+                supervisor_subject_path(subject), method: :delete,
+                data: {confirm: t("delete.sure")},
+                class: "btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 </div>

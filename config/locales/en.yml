@@ -84,6 +84,9 @@ en:
     empty: "Subject does not exist"
     finish: "finish"
     is_not_started: "Subject have not started yet"
+    name: "Name"
+    description: "Description"
+    action: "Action"
   tasks:
     update: "Update"
     is_not_available: "Tasks of this course is not available"
@@ -116,9 +119,17 @@ en:
     start: "start"
     active: "Your Active Course"
     course_finished: "Finished Course"
+    name: "Name"
+    description: "Description"
+    action: "Action"
+    count: "Number of Users"
   user:
+    index: "Users"
     profile: "Profile"
     dashboard: "Dashboard"
+    name: "Name"
+    action: "Action"
+    id: "Id"
   dashboard:
     courses: "All Courses"
     subjects: "All Subjects"
