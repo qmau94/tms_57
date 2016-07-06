@@ -1,7 +1,5 @@
 <%= activity.action %> 
 <%= t "activity.#{activity.trackable_type.underscore}" %>
-<%= link_to activity.trackable.subject.name, [activity.trackable.course,
-  activity.trackable] %><%= t "in course" %>
-<%= link_to activity.trackable.course.name, activity.trackable.course %>
-<br>
+<%= activity.trackable.subject.name %><%= t "in course" %>
+<%= activity.trackable.course.name%><br>
 <%= time_ago_in_words activity.created_at %> <%= t "activity.ago" %><br>

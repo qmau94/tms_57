@@ -56,7 +56,7 @@ en:
     new_user: "NEW USER"
   session: 
     remember: "Remember me on this computer"
-    set_role: "Set user as supervisor"
+    set_role: "Role"
   supervisor:
     new_user: "New User"
     create_account: "Create User Account"

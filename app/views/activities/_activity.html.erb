@@ -1,5 +1,7 @@
 <% @activities.each do |activity| %>
-  <%= link_to activity.user.name, activity.user if activity.user %>
-  <%= render "activities/#{activity.trackable_type.underscore}",
+  <li>
+    <%= link_to activity.user.name, activity.user if activity.user %>
+    <%= render "activities/#{activity.trackable_type.underscore}",
     activity: activity%>
+  </li>
 <% end %>

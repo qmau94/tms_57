@@ -1,0 +1,55 @@
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <%= link_to root_path do %>
+        <%= image_tag "framgia2.png", class: "header-img" %>
+      <% end %>  
+    </li>
+    <li class="panel-group">
+    <a><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Dashboard</a>
+    </li>
+    <li class="panel-group">
+          <a data-toggle="collapse" href="#user">Users</a>
+      <ul id="user" class="panel-collapse collapse">
+         <li>
+      <%= link_to t("navbar.new_user"), new_supervisor_user_path %>
+    </li>
+    <li>
+      <%= link_to t("navbar.user"), supervisor_users_path %>
+    </li>
+      </ul>
+    </li>
+    <li class="panel-group">
+          <a data-toggle="collapse" href="#subject">Subjects</a>
+      <ul id="subject" class="panel-collapse collapse">
+          <li>
+      <%= link_to t("subjects.new"), new_supervisor_subject_path %>
+    </li>
+    <li>
+      <%= link_to t("subjects.index"), supervisor_subjects_path %>
+    </li>
+      </ul>
+    </li>
+    <li class="panel-group">
+          <a data-toggle="collapse" href="#course">Courses</a>
+      <ul id="course" class="panel-collapse collapse">
+      <li>
+      <%= link_to t("courses.new"), new_supervisor_course_path %>
+    </li>
+    <li>
+      <%= link_to t("courses.index"), supervisor_courses_path %>
+    </li>
+      </ul>
+    </li>
+    <li class="panel-group">
+          <a data-toggle="collapse" href="#account">Account</a>
+      <ul id="account" class="panel-collapse collapse">
+         <li><%= link_to t("navbar.profile"), current_user %></li>
+        <li><%= link_to t("navbar.setting"), edit_user_path(current_user) %></li>
+        <li>
+          <%= link_to t("navbar.logout"), logout_path, method: :delete %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

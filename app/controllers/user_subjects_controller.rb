@@ -4,7 +4,8 @@ class UserSubjectsController < ApplicationController
   
   def show
     if @user_subject.init?
-      flash[:danger] = t "is_not_started"
+      flash[:danger] = t "subjects.is_not_started"
+      redirect_to :back
     else
       @activities = current_user.activities.desc
     end

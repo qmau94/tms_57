@@ -1,4 +1,5 @@
 <%= activity.action %> 
 <%= t "activity.#{activity.trackable_type.underscore}" %>
-<%= activity.trackable.subject.name %><br>
+<%= activity.trackable.task.name%><%= t "in subject" %>
+<%= activity.trackable.user_subject.subject.name %><br>
 <%= time_ago_in_words activity.created_at %> <%= t "activity.ago" %><br>

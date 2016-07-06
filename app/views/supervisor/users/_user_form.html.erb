@@ -15,7 +15,7 @@
       <%= f.label :password_confirmation, t("edit.pass_confirmation") %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
-      <span><%= t ("session.set_role") %></span>
+      <%=f.label :role, t("session.set_role") %>
       <%= f.select :role, @role.collect{|key, value| [t(key), key]} %>
 
       <%= f.submit t("button.submit"), class: "btn btn-primary" %>

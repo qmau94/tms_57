@@ -7,39 +7,7 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? && current_user.supervisor? %>
-          <li>
-            <%= link_to t("navbar.new_user"), new_supervisor_user_path %>
-          </li>
-          <li>
-            <%= link_to t("navbar.user"), supervisor_users_path %>
-          </li>
-          <li>
-            <%= link_to t("subjects.new"), new_supervisor_subject_path %>
-          </li>
-          <li>
-            <%= link_to t("subjects.index"), supervisor_subjects_path %>
-          </li>
-          <li>
-            <%= link_to t("courses.new"), new_supervisor_course_path %>
-          </li>
-          <li>
-            <%= link_to t("courses.index"), supervisor_courses_path %>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= t("navbar.account") %> <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to t("navbar.profile"), current_user %></li>
-              <li><%= link_to t("navbar.setting"), edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to t("navbar.logout"), logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% elsif logged_in? %>
+        <% if logged_in? %>
           <li><%= link_to t("navbar.user"), "#" %></li>
           <li>
             <%= link_to t("courses.index"), courses_path %>
