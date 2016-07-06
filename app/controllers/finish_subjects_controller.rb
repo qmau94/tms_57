@@ -14,11 +14,4 @@ class FinishSubjectsController < ApplicationController
   def active_params
     params[:status]
   end
-  
-  def verify_started_course
-    @user_subject = current_user.user_subjects.find_by id: params[:user_subject_id]
-    unless @user_subject.start?
-      flash[:danger] = t "subjects.is_not_started"
-    end
-  end
 end

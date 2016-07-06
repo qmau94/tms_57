@@ -9,8 +9,8 @@ class CoursesController < ApplicationController
     @user_course = UserCourse.includes(course: :user_courses)
       .find_by id: params[:id]
     @course = @user_course.course
-    @user_courses = UserCourse.includes(course: :user_courses)
-      .where course_id: @course
+    @user_courses = @course.user_courses
+    @activities = @user_course.course.all_activities
     if @user_course.nil?
       flash[:danger] = t "courses.empty"
       redirect_to root_url

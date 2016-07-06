@@ -8,6 +8,14 @@ class Subject < ActiveRecord::Base
   accepts_nested_attributes_for :tasks, allow_destroy: true,
     reject_if: :reject_tasks
 
+  def all_activities
+    activities = Array.new
+    acts = Activity.all
+    activities += acts.find_with self
+    activities += acts.find_with_many self.user_tasks
+    activities.sort {|a,b| b.created_at <=> a.created_at}
+  end
+
   def reject_tasks attributes
     attributes["name"].blank? || attributes["description"].blank?
   end

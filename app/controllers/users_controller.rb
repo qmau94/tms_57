@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user_courses = current_user.user_courses
+    @activities = @user.activities.desc
   end
 
   def edit
