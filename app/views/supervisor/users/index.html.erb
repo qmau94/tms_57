@@ -1,16 +1,60 @@
+<%= provide :title, t("user.index") %>
 <div class="col-md-6">
   <h1><%= t "index.all_trainee" %></h1>
-  <% @trainees.each do |user| %>
-    <li>
-      <%= link_to user.name, supervisor_user_path(user) %>
-    </li>
-  <% end %>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th><%= t "user.id" %></th>
+          <th><%= t "user.name" %></th>
+          <th><%= t "user.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @trainees.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= link_to user.name, supervisor_user_path(user) %></td>
+            <td><%= link_to t("button.edit"),
+            edit_supervisor_user_path(user),
+            class: "btn btn-success"%>
+              <%= link_to t("button.delete"),
+              supervisor_user_path(user), method: :delete,
+              data: {confirm: t("delete.sure")},
+              class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="col-md-6">
   <h1><%= t "index.all_supervisor" %></h1>
-  <% @supervisors.each do |supervisor|%>
-    <li>
-      <%= link_to supervisor.name, supervisor_user_path(supervisor) %>
-    </li>
-  <% end %>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th><%= t "user.id" %></th>
+          <th><%= t "user.name" %></th>
+          <th><%= t "user.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @supervisors.each do |supervisor|%>
+          <tr>
+            <td><%= supervisor.id %></td>
+            <td><%= link_to supervisor.name,
+              supervisor_user_path(supervisor) %></td>
+            <td><%= link_to t("button.edit"),
+              edit_supervisor_user_path(supervisor),
+              class: "btn btn-success"%>
+              <%= link_to t("button.delete"),
+              supervisor_user_path(supervisor), method: :delete,
+              data: {confirm: t("delete.sure")},
+              class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

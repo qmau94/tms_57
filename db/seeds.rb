@@ -10,12 +10,20 @@ User.create! name: "Admin", email: "admin@gmail.com",
 User.create! name: "User", email: "user@gmail.com",
   password: "1", password_confirmation: "1", role: 0
 
-50.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@gmail.com"
   password = "1"
   User.create! name: name, email: email, password: password,
     password_confirmation: password, role: 0
+end
+
+5.times do |n|
+  name  = Faker::Name.name
+  email = "ad-#{n+1}@gmail.com"
+  password = "1"
+  User.create! name: name, email: email, password: password,
+    password_confirmation: password, role: 1
 end
 
 users = User.all
@@ -43,3 +51,8 @@ Course.create! name: "App Development", description: "Flappy",
 UserCourse.create! user_id: 2, course_id: 1
 UserCourse.create! user_id: 3, course_id: 1
 UserCourse.create! user_id: 4, course_id: 1
+
+10.times do |us|
+  user_id = rand(us + 10)
+  UserCourse.create! user_id: user_id, course_id: 2
+end
