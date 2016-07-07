@@ -51,8 +51,3 @@ Course.create! name: "App Development", description: "Flappy",
 UserCourse.create! user_id: 2, course_id: 1
 UserCourse.create! user_id: 3, course_id: 1
 UserCourse.create! user_id: 4, course_id: 1
-
-10.times do |us|
-  user_id = rand(us + 10)
-  UserCourse.create! user_id: user_id, course_id: 2
-end
