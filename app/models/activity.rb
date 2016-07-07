@@ -7,5 +7,4 @@ class Activity < ActiveRecord::Base
     trackable_id: trackable.id}
   scope :find_with_many, -> trackable{where(
     trackable_type: trackable.model.name, trackable_id: trackable.ids)}
-  scope :today, -> {where created_at < 1.day.ago}
 end
