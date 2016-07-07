@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def show
-    @user_courses = current_user.user_courses
+    @user_courses = @user.user_courses
     @activities = @user.activities.desc
   end
 

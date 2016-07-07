@@ -15,8 +15,9 @@
       <% end %>
       <%= link_to_add_fields t("subjects.add_task"), f, :tasks %>
 
-      <%= f.submit t("subjects.#{params[:action]}_title"),
-        class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-primary" do %>
+        <%= t "subjects.#{params[:action]}_title" %>
+      <% end %>
     <% end %> 
   </div>
 </div>

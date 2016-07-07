@@ -16,8 +16,8 @@ class Supervisor::UsersController < ApplicationController
   end
 
   def index
-    @trainees = User.trainee.all
-    @supervisors = User.supervisor.all
+    @trainees = User.trainee
+    @supervisors = User.supervisor
   end
 
   def edit
