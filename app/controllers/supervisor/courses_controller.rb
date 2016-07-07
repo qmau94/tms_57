@@ -2,6 +2,7 @@ class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user, :verify_supervisor
   before_action :find_course, except: [:index, :new, :create] 
   before_action :verify_editable_course, only: [:edit, :update]
+  before_action :load_all_subjects, only: [:edit, :update, :new, :create]
 
   def index
     @courses = Course.all
@@ -9,7 +10,6 @@ class Supervisor::CoursesController < ApplicationController
 
   def new
     @course = Course.new
-    @subjects = Subject.all
   end
 
   def create
@@ -30,11 +30,10 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def edit
-    @subjects = Subject.all
   end
 
   def update
-    if @course.update course_params
+    if @course.update_attributes course_params
       flash[:success] = t "courses.update"
       redirect_to supervisor_course_path @course
     else
@@ -62,5 +61,9 @@ class Supervisor::CoursesController < ApplicationController
       flash[:danger] = t "courses.empty"
       redirect_to root_url
     end
+  end
+
+  def load_all_subjects
+    @subjects = Subject.all
   end
 end

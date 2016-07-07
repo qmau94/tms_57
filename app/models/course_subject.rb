@@ -1,5 +1,6 @@
 class CourseSubject < ActiveRecord::Base
   include Trackable
+  before_destroy :delete_all_activities
   
   after_update :active_activity, if: :status_change?
   after_update :update_subjects_status

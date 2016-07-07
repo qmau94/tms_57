@@ -1,6 +1,12 @@
 module Trackable
   extend ActiveSupport::Concern
   
+  def delete_all_activities
+    self.all_activities.each do |activity|
+      activity.destroy
+    end
+  end
+
   def track_activity action, user
     Activity.create user: user, action: action, trackable: self
   end

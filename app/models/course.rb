@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
   include Trackable
+  before_destroy :delete_all_activities
   after_update :create_user_subject, if: :init_to_start?
   after_update :active_activity, if: :status_change?
 

@@ -29,7 +29,7 @@ class Supervisor::SubjectsController < ApplicationController
   end
 
   def update
-    if @subject.update subject_params
+    if @subject.update_attributes subject_params
       flash[:success] = t "subjects.edit_success"
       redirect_to supervisor_subject_path @subject
     else

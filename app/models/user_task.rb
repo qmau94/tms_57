@@ -1,5 +1,6 @@
 class UserTask < ActiveRecord::Base
   include Trackable
+  before_destroy :delete_all_activities
 
   after_create :create_activity
 
