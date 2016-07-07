@@ -1,10 +1,23 @@
 <%= form_for [:supervisor, @course], 
   url: supervisor_assign_trainee_path do |f| %>
-  <div class="col-md-6 col-md-offset-3">
-    <h4><%= t "title.supervisor" %></h4>
-    <%= render @supervisors, f: f %>
-    <h4><%= t "title.trainee" %></h4>
-    <%= render @trainees, f: f %>
-    <%= f.submit t("button.submit"), class: "btn btn-primary" %>
+  <div class="form-style-5">
+    <form>
+      <fieldset class="col-md-6">
+        <legend>
+          <span class="number">1</span> 
+          <%= t "title.supervisor" %>
+        </legend>
+        <%= render @supervisors, f: f %>
+      </fieldset>
+      <fieldset class="col-md-6">
+        <legend>
+          <span class="number">2</span>
+          <%= t "title.trainee" %>
+        </legend>
+        <%= render @trainees, f: f %>
+      </fieldset>
+      <%= f.submit t("button.submit"), class: "btn btn-primary", 
+        id: "submit" %>
+    </form>
   </div>
 <% end %>

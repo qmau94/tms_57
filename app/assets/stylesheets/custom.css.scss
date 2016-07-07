@@ -172,6 +172,9 @@ nav {
   border-right: 1px solid $gray-medium-light;
   border-bottom: 1px solid $gray-medium-light;
 }
+
+/* course progress */
+
 .subject {
   height: 100px;
   width: 150px;
@@ -197,9 +200,117 @@ nav {
 }
 h2 {
   color: green;
+  text-align: center;
 }
-.user_name {
-  font-size: 20px;
+#user_name {
+  font-size: 15px;
+}
+#remove_button {
+  padding: 2px 2px;
+}
+#course_container {
+  border-left: 2px solid $gray-medium-light; 
+}
+/* course_index_user_side */
+
+#center{
+  text-align: center;
+}
+.active_course {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 180px;
+  width: 240px;
+  background: url(https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-512.png);
+  background-size: 100%;
+  margin-bottom: 20px;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+.finished_course {
+  text-align: center;
+  margin-left: auto;
+  marigin-right: auto;
+  height: 120px;
+  width: 180px;
+  display: inline-block;
+  background: url(http://us.123rf.com/450wm/cowpland/cowpland1411/cowpland141100371/34141568-completed-tasks-modern-flat-icon-with-long-shadow.jpg?ver=6);
+  background-size: 100%;
+  margin-bottom: 20px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+.course_name {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* assign_form */
+
+ .form-style-5{
+    max-width: 800px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-5 fieldset{
+    border: none;
+    display: block;
+}
+.form-style-5 legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.form-style-5 label {
+    display: block;
+    margin-bottom: 8px;
+}
+.form-style-5 .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover
+{
+    background: #109177;
+}
+.assign_form{
+  padding-right: 10px;
+  padding-top: 10px;  
 }
 .sidebar-nav li a {
   text-transform: uppercase;

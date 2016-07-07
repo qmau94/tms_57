@@ -1,20 +1,21 @@
 <%= provide :title, @course.name %>
-<div class="col-md-3" id="user_course">
+<div class="col-md-2" id="user_course">
   <h2><%= t "title.trainee" %></h2>
-  <ol>
+  <div>
     <% @user_courses.each do |user_course| %>
       <% if user_course.user.trainee? %>
-        <li class="user_name">
-          <div class="col-md-8">
+        <div id="user_name">
+          <div>
             <%= link_to user_course.user.name, user_path(user_course.user) %>
           </div>
-        </li>
+        </div>
       <% end %>
     <% end %>
   </ol>
   <%= render "activities/activities" %>
+  </div>
 </div>
-<div class="col-md-9" id="subject_wrapper">
+<div class="col-md-10" id="subject_wrapper">
   <h1><%= @course.name %></h1>
   <h4><%= t "courses.description" %> : <%= @course.description %></h4>
   <% if @user_subjects.any? %>

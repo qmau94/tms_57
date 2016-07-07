@@ -1,29 +1,37 @@
 <%= provide :title, @course.name %>
-<div class="col-md-4">
-  <h4><%= t "title.supervisor" %></h4>
-  <ol>
+<div class="col-md-4" id="user_course">
+  <h2><%= t "title.supervisor" %></h2>
+  <div>
     <% @supervisors.each do |supervisor| %>
-      <li>
-        <%= link_to supervisor.user.name %>
-        <%= link_to t("button.delete"), 
-          supervisor_user_course_path(supervisor), method: :delete,  
-          data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
-      </li>
+      <div>
+        <div class="col-md-8" id="user_name">
+          <%= link_to supervisor.user.name %>
+        </div>
+        <div class="col-md-2" id="remove_button">
+          <%= link_to t("button.delete"), 
+            supervisor_user_course_path(supervisor), method: :delete,  
+            data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
+        </div>
+      </div>
     <% end %>
-  </ol>
-  <h4><%= t "title.trainee" %></h4>
-  <ol>
+  </div>
+  <h2><%= t "title.trainee" %></h2>
+  <div>
     <% @trainees.each do |trainee| %>
-      <li>
-        <%= link_to trainee.user.name %>
-        <%= link_to t("button.delete"), 
-          supervisor_user_course_path(trainee), method: :delete,  
-          data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
-      </li>
+      <div>
+        <div class="col-md-8" id="user_name">
+          <%= link_to trainee.user.name %>
+        </div>
+        <div class="col-md-2" id="remove_button">
+          <%= link_to t("button.delete"), 
+            supervisor_user_course_path(trainee), method: :delete,  
+            data: {confirm: t("flash.confirm")}, class: "btn btn-danger" %>
+        </div>
+      </div>
     <% end %>
-  </ol>
+  </div>
 </div>
-<div class="col-md-8">
+<div class="col-md-6" id="course_container">
   <h2><%= @course.name %></h2>
   <h4><%= t "courses.description" %> : <%= @course.description %></h4>
   <h4><%= t "courses.subject" %></h4>
