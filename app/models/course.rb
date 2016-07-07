@@ -27,12 +27,15 @@ class Course < ActiveRecord::Base
   private
   def create_user_subject
     self.user_courses.each do |user_course|
-      self.course_subjects.each do |course_subject|
-        UserSubject.create user_id: user_course.user_id,
-          subject_id: course_subject.subject_id,
-          user_course_id: user_course.id,
-          course_id: course_subject.course_id
+      if user_course.user.trainee? 
+        self.course_subjects.each do |course_subject| 
+          UserSubject.create user_id: user_course.user_id,
+            subject_id: course_subject.subject_id,
+            user_course_id: user_course.id,
+            course_id: course_subject.course_id
+        end
       end
     end
   end
+
 end
